@@ -1,0 +1,2 @@
+$env:PATH = "C:\Users\PET0159792\node;" + $env:PATH
+node - v
