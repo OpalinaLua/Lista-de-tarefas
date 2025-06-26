@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +25,11 @@ function App() {
       <p className="read-the-docs">
          Clique nos logotipos Vite e React para saber mais
       </p>
+      <footer>
+        <b className='rodape'>
+          Firjan Senai - Front End - 2025
+        </b>
+      </footer>
     </>
   )
 }
