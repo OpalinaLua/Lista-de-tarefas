@@ -1,5 +1,5 @@
 :root{
-  --primary-color:tomato;
+  --primary-color:rgb(141, 71, 255);
 }
 *{
   margin: 0;
@@ -8,6 +8,8 @@
 }
 body,input,textarea,button{
   font-size: 1rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:'Times New Roman', Times, serif;
+  background-color: black;
+  color: azure;
 
 }
