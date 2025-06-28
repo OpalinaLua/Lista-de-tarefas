@@ -8,7 +8,7 @@ function App() {
       <div className={styles.app}>
         <Header />
         <main className={styles.main}>
-          <Card />
+          <Card name="ps5" description="para jogo " image="linkk" />
         </main>
         <Footer />
       </div>
