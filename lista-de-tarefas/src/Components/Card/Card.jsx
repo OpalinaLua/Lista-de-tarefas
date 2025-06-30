@@ -1,14 +1,14 @@
-import style from "./card.module.css";
+import styles from "./Card.module.css";
 
 export const Card = ({ name, description, image }) => {
   return (
-    <div className={Style.card}>
-      <div className={Style.imgcontainer}>
-        <img src={image} alt={name} className={Style.image} />
+    <div className={styles.card}>
+      <div className={styles.imgContainer}>
+        <img src={image} alt={name} className={styles.image} />
       </div>
-      <div className={Style.content}>
-        <h3 className={Style.name}>{name}</h3>
-        <p className={Style.description}>{description}</p>
+      <div className={styles.content}>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.description}>{description}</p>
       </div>
     </div>
   );
