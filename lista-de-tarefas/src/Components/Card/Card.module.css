@@ -17,6 +17,7 @@
   border-radius: 10%;
   object-fit: cover;
   margin-top: 20px;
+  border: 1px solid;
 }
 .content {
   padding: 1.5rem;
@@ -37,7 +38,7 @@
   justify-content: center;
   overflow: hidden;
 }
-@midea (max-width: 768px) {
+@media (max-width: 768px) {
   .content {
     padding: 1.25rem;
   }
