@@ -3,6 +3,8 @@ import { Card } from "./Components/Card/Card";
 import { CardGrid } from "./Components/CardGrid/CardGrid";
 import { Footer } from "./Components/Footer/Footer";
 import { Header } from "./Components/Header/Header";
+import { Contador } from "./Components/Contador/Contador";
+import { ContadorStateless } from "./Components/ContadorStateless.jsx/ContadorStateless";
 
 function App() {
   return (
