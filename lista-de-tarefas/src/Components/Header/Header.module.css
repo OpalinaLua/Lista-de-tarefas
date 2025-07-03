@@ -1,7 +1,9 @@
 .header {
-  background: linear-gradient(45deg, skyblue 0%, navy 100%);
+  background: linear-gradient(45deg, cornflowerBlue 0%, navy 100%);
   backdrop-filter: blur(10px);
-  border-bottom: 3px solid rgb(94, 40, 9);
+  border-bottom: 3px solid;
+  border-image: linear-gradient(45deg, indigo 0%, mediumpurple 100%);
+  border-image-slice: 1;
   padding: 2rem 1rem;
   position: sticky;
   top: 0;
@@ -18,5 +20,5 @@
   color: turquoise;
   margin: 0 0 1.5rem 0;
   letter-spacing: 0, 025em;
-  text-shadow: 10px 0 10px rgb(102, 50, 14);
+  text-shadow: 10px 0 10px rgb(99, 49, 13);
 }

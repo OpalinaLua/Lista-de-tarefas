@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  background-color: lightskyblue;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.inputContainer > input {
+  padding: 8px;
+  border: 2px solid rgb(91, 190, 252);
+  border-radius: 8px;
+}
+.inputContainer > input:focus {
+  outline: none;
+  border-color: indigo;
+  box-shadow: 0 2px 4px rgb(99, 49, 13);
+}
+.button {
+  background-color: rgb(91, 190, 252);
+  color: indigo;
+  padding: 8px;
+  border: 2px solid indigo;
+  border-radius: 8px;
+  place-self: flex-end;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: lavenderblush;
+  transform: translatey(-1px);
+  box-shadow: 0 2px 4px rgb(99, 49, 13);
+}

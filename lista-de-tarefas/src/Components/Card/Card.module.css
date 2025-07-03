@@ -1,9 +1,9 @@
 .card {
-  background-color: rgb(136, 135, 135);
+  background-color: rgb(208, 178, 248);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgb(rgb(0, 0, 0), 0.5), 0 1px 3px rgb(rgb(0, 0, 0), 0.5);
   border: 1px solid;
+  position: relative;
 }
 .imgContainer {
   position: relative;
@@ -17,7 +17,7 @@
   border-radius: 10%;
   object-fit: cover;
   margin: 20px;
-  border: 1px solid;
+  border: 2px solid;
 }
 .content {
   padding: 1.5rem;
@@ -25,13 +25,13 @@
 .name {
   font-size: 1.25rem;
   font-weight: 600;
-  color: bisque;
+  color: rgb(188, 88, 238);
   display: flex;
   justify-content: center;
 }
 .description {
   font-size: 0.875rem;
-  color: burlywood;
+  color: darkorchid;
   line-height: 1.6;
   margin: 0;
   display: flex;
@@ -48,4 +48,18 @@
   .description {
     font-size: 0.8125rem;
   }
+}
+.delete {
+  position: absolute;
+  background-color: firebrick;
+  padding: 10px;
+  bottom: 1.7rem;
+  border: 2px solid darkred;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover .delete {
+  opacity: 1;
 }

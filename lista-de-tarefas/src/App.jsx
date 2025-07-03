@@ -1,34 +1,63 @@
+import { useEffect, useState } from "react";
 import styles from "./App.module.css";
-import { Card } from "./Components/Card/Card";
-import { CardGrid } from "./Components/CardGrid/CardGrid";
-import { Footer } from "./Components/Footer/Footer";
-import { Header } from "./Components/Header/Header";
-import { Contador } from "./Components/Contador/Contador";
-import { ContadorStateless } from "./Components/ContadorStateless.jsx/ContadorStateless";
-import { useState } from "react";
+import { CardGrid } from "./components/CardGrid/CardGrid";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { AddItemForm } from "./Components/AddItemForm/AddItemForm";
 
 function App() {
   const [wishs, setWishs] = useState([]);
-  const [form, setsform] = useState({
+  const [loading, setLoading] = useState([true]);
+  const [form, setForm] = useState({
     name: "",
-    descripition: "",
+    description: "",
+    urlImage: "",
   });
-  const handleAChange = (newItem) => {
-    const { name, value } = e.target;
-    setsform((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    const newWishs = { name: newItem.name, descripition: newItem.descripition };
-    const update = [...wishs, newWishs];
-    setWishs(updateWishs);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const updatedWishs = [...wishs, form];
+    setWishs(updatedWishs);
+    setForm({
+      name: "",
+      description: "",
+      urlImage: "",
+    });
   };
+
+  const handleDelete = (indexToDelete) => {
+    const updatedWishs = wishs.filter((_, index) => index !== indexToDelete);
+    setWishs(updatedWishs);
+  };
+
+  useEffect(() => {
+    const savedWishs = localStorage.getItem("userWishs");
+    if (savedWishs) {
+      try {
+        const parsedWishs = JSON.parse(savedWishs);
+        setWishs(parsedWishs);
+      } catch (erro) {
+        console.error(erro);
+      }
+    }
+    setLoading(false);
+  }, []);
+  useEffect(() => {
+    if (!loading) {
+      localStorage.setItem("userWishs", JSON.stringify(wishs));
+    }
+  }, [wishs]);
+
   return (
     <div className={styles.app}>
       <Header />
       <main className={styles.main}>
-        <form action=""></form>
-        <CardGrid />
+        <AddItemForm
+          handleSubmit={handleSubmit}
+          form={form}
+          setForm={setForm}
+        />
+        <CardGrid wishs={wishs} handleDelete={handleDelete} />
       </main>
       <Footer />
     </div>
