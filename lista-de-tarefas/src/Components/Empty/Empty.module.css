@@ -1,9 +1,12 @@
 .container {
-  font-size: 50px;
+  min-height: 42vh;
+}
+
+.icon {
+}
+.tex {
+  font-size: 20px;
   color: aliceblue;
   text-align: center;
   font-family: fantasy;
-  background: linear-gradient(0deg, rgb(37, 1, 63) 0%, MediumPurple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }

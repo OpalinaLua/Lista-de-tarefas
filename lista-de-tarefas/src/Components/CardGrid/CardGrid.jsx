@@ -1,5 +1,5 @@
 import { Card } from "../Card/Card";
-import { EmptyStatus } from "../Empty/Empty";
+import { Empty } from "../Empty/Empty";
 import styles from "./CardGrid.module.css";
 
 export const CardGrid = ({ wishs, handleDelete, search }) => {
@@ -8,7 +8,7 @@ export const CardGrid = ({ wishs, handleDelete, search }) => {
   return (
     <>
       {isEmptyList ? (
-        <EmptyStatus isSearching={isSearching} />
+        <Empty isSearching={isSearching} />
       ) : (
         <div className={styles.grid}>
           {wishs.map((wish, index) => (

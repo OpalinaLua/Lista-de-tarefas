@@ -31,10 +31,10 @@ export const Header = ({ onSearch, onClear }) => {
               className={style.input}
             />
             <button type="submit" className={style.button}>
-              <p className={style.colorp}> Pesquisar</p>
+              <p className={style.colorp}>Pesquisar🔍</p>
             </button>
             <button type="button" onClick={onClear} className={style.clear}>
-              Limpar
+              Limpar🧹
             </button>
           </div>
         </form>
