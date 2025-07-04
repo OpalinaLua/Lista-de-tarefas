@@ -18,6 +18,7 @@
   border-radius: 8px;
 }
 .inputContainer > input:focus {
+  transform: scale(1.05);
   outline: none;
   border-color: indigo;
   box-shadow: 0 2px 4px rgb(99, 49, 13);
@@ -34,7 +35,7 @@
   cursor: pointer;
 }
 .button:hover {
-  background-color: mediumslateblue;
+  background: linear-gradient(45deg, mediumslateblue 0%, violet 100%);
   color: indigo;
   border: 2px;
   transform: translatey(-1px);

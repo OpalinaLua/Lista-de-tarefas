@@ -2,7 +2,7 @@
   background: linear-gradient(45deg, cornflowerBlue 0%, navy 100%);
   backdrop-filter: blur(10px);
   border-bottom: 3px solid;
-  border-image: linear-gradient(45deg, indigo 0%, mediumpurple 100%);
+  border-image: linear-gradient(45deg, rgb(65, 1, 110) 0%, mediumpurple 100%);
   border-image-slice: 1;
   padding: 2rem 1rem;
   position: sticky;
@@ -20,27 +20,44 @@
   color: turquoise;
   margin: 0 0 1.5rem 0;
   letter-spacing: 0, 025em;
-  text-shadow: 10px 0 10px rgb(99, 49, 13);
+  background: linear-gradient(45deg, #ffeb3b 0%, rgb(180, 137, 27) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(10px 8px 5px rgb(99, 49, 13));
 }
 .input {
   padding: 8px;
   border: 2px solid rgb(91, 190, 252);
   border-radius: 8px;
+  transition: all 0.001s;
+  margin-right: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+}
+.input:focus {
+  transform: scale(1.05);
 }
 .button,
 .clear {
   background: linear-gradient(45deg, navy 0%, cornflowerBlue 100%);
   color: rgb(255, 255, 255);
-  padding: 6.5px;
+  padding: 8px;
   border: 2px solid rgb(91, 190, 252);
   border-radius: 8px;
   place-self: flex-end;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
   cursor: pointer;
+  margin-right: 5px;
+}
+.colorp:hover {
+  padding: 2px;
+  background: linear-gradient(45deg, black 0%, aquamarine);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .button:hover {
-  background: linear-gradient(45deg, rgb(208, 178, 248) 0%, indigo 100%);
+  background: linear-gradient(45deg, Chartreuse 0%, darkgreen 100%);
   border: 2px;
   transform: translatey(-1px);
   box-shadow: 0 2px 4px rgb(99, 49, 13);

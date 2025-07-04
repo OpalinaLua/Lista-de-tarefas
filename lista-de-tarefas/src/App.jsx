@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./App.module.css";
-import { CardGrid } from "./components/CardGrid/CardGrid";
+import { CardGrid } from "./Components/CardGrid/CardGrid";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { AddItemForm } from "./Components/AddItemForm/AddItemForm";
@@ -82,7 +82,11 @@ function App() {
           form={form}
           setForm={setForm}
         />
-        <CardGrid wishs={filteredWishs} handleDelete={handleDelete} />
+        <CardGrid
+          wishs={filteredWishs}
+          handleDelete={handleDelete}
+          search={search}
+        />
       </main>
       <Footer />
     </div>

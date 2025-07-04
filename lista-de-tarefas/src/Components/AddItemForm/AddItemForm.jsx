@@ -45,7 +45,6 @@ export const AddItemForm = ({ handleSubmit, form, setForm }) => {
           name="date"
           value={form.date}
           onChange={handleChange}
-          required
         />
       </div>
       <button className={styles.button} type="submit">
