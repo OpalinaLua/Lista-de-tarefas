@@ -38,6 +38,16 @@ export const AddItemForm = ({ handleSubmit, form, setForm }) => {
           onChange={handleChange}
         />
       </div>
+      <div className={styles.inputContainer}>
+        <label htmlFor="name">Data</label>
+        <input
+          type="date"
+          name="date"
+          value={form.date}
+          onChange={handleChange}
+          required
+        />
+      </div>
       <button className={styles.button} type="submit">
         Adicionar
       </button>

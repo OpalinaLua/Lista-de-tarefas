@@ -22,3 +22,32 @@
   letter-spacing: 0, 025em;
   text-shadow: 10px 0 10px rgb(99, 49, 13);
 }
+.input {
+  padding: 8px;
+  border: 2px solid rgb(91, 190, 252);
+  border-radius: 8px;
+}
+.button,
+.clear {
+  background: linear-gradient(45deg, navy 0%, cornflowerBlue 100%);
+  color: rgb(255, 255, 255);
+  padding: 6.5px;
+  border: 2px solid rgb(91, 190, 252);
+  border-radius: 8px;
+  place-self: flex-end;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.button:hover {
+  background: linear-gradient(45deg, rgb(208, 178, 248) 0%, indigo 100%);
+  border: 2px;
+  transform: translatey(-1px);
+  box-shadow: 0 2px 4px rgb(99, 49, 13);
+}
+.clear:hover {
+  background: linear-gradient(45deg, red 0%, firebrick 100%);
+  border: 2px;
+  transform: translatey(-1px);
+  box-shadow: 0 2px 4px rgb(99, 49, 13);
+}

@@ -34,7 +34,9 @@
   cursor: pointer;
 }
 .button:hover {
-  background-color: lavenderblush;
+  background-color: mediumslateblue;
+  color: indigo;
+  border: 2px;
   transform: translatey(-1px);
   box-shadow: 0 2px 4px rgb(99, 49, 13);
 }
