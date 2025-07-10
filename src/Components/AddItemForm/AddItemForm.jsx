@@ -47,6 +47,7 @@ export const AddItemForm = ({ handleSubmit, form, setForm }) => {
           onChange={handleChange}
         />
       </div>
+
       <button className={styles.button} type="submit">
         Adicionar
       </button>

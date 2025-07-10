@@ -1,58 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./App.module.css";
 import { CardGrid } from "./Components/CardGrid/CardGrid";
-import { Footer } from "./components/Footer/Footer";
-import { Header } from "./components/Header/Header";
 import { AddItemForm } from "./Components/AddItemForm/AddItemForm";
+import { useWishs } from "./hooks/useWishs";
 
-function App() {
-  const [wishs, setWishs] = useState([]);
-  const [loading, setLoading] = useState([true]);
-  const [search, setSearch] = useState("");
-  const [form, setForm] = useState({
-    name: "",
-    description: "",
-    urlImage: "",
-    date: "",
-  });
+const DEFAULT_FORM = {
+  name: "",
+  description: "",
+  urlImage: "",
+  date: "",
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const updatedWishs = [...wishs, form];
-    setWishs(updatedWishs);
-    setForm({
-      name: "",
-      description: "",
-      urlImage: "",
-      date: "",
-    });
-  };
+function App({ search }) {
+  const { wishs, setWishs } = useWishs();
 
-  const handleDelete = useCallback(
-    (indexToDelete) => {
-      const updatedWishs = wishs.filter((_, index) => index !== indexToDelete);
-      setWishs(updatedWishs);
-    },
-    [wishs]
-  );
-
-  useEffect(() => {
-    const savedWishs = localStorage.getItem("userWishs");
-    if (savedWishs) {
-      try {
-        const parsedWishs = JSON.parse(savedWishs);
-        setWishs(parsedWishs);
-      } catch (erro) {
-        console.error(erro);
-      }
-    }
-    setLoading(false);
-  }, []);
-  useEffect(() => {
-    if (!loading) {
-      localStorage.setItem("userWishs", JSON.stringify(wishs));
-    }
-  }, [wishs]);
+  const [form, setForm] = useState(DEFAULT_FORM);
 
   const filteredWishs = useMemo(() => {
     if (!search.trim()) {
@@ -67,15 +29,26 @@ function App() {
     });
   }, [search, wishs]);
 
-  const onSearch = useCallback((searchValue) => {
-    setSearch(searchValue);
-  });
-  const onClear = useCallback(() => {
-    setSearch("");
-  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newId =
+      wishs.length > 0 ? Math.max(...wishs.map((w) => Number(w.id))) + 1 : 1;
+    const newWish = { ...form, id: newId };
+    const updatedWishs = [...wishs, newWish];
+    setWishs(updatedWishs);
+    setForm(DEFAULT_FORM);
+  };
+
+  const handleDelete = useCallback(
+    (indexToDelete) => {
+      const updatedWishs = wishs.filter((_, index) => index !== indexToDelete);
+      setWishs(updatedWishs);
+    },
+    [wishs]
+  );
+
   return (
     <div className={styles.app}>
-      <Header onSearch={onSearch} onClear={onClear} />
       <main className={styles.main}>
         <AddItemForm
           handleSubmit={handleSubmit}
@@ -88,7 +61,6 @@ function App() {
           search={search}
         />
       </main>
-      <Footer />
     </div>
   );
 }
