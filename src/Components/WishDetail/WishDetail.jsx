@@ -1,30 +1,61 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useWishs } from "../../hooks/useWishs";
 import { useEffect, useState } from "react";
+import { formatDate } from "../../utils/formatDate";
+import { AddItemForm } from "../AddItemForm/AddItemForm";
 
 export const WishDetail = () => {
   const { id } = useParams();
-  const { wishs, loading, setLoading } = useWishs();
-  const [wishDetail, setwishsDetail] = useState({});
+  const { wishs, loading, setLoading, form, setform } = useWishs();
+  const [wishDetail, setwishDetail] = useState({});
+  const [isEditing, setIsEditing] = useState(false);
+  const navigate = useNavigate();
+
+  const handleEditToggle = () => {
+    setIsEditing((prev) => !prev);
+  };
 
   useEffect(() => {
     setLoading(true);
-    if (id && useWishs.length > 0) {
-      const foundWish = wishs.find((wish) => wishs.id === Number.parseInt(id));
-      setwishsDetail(foundWish);
+    if (id && wishs.length > 0) {
+      const foundWish = wishs.find((wish) => wish.id === Number.parseInt(id));
+      console.log(foundWish);
+      setwishDetail(foundWish);
+      setform({
+        name: foundWish.name,
+        description: foundWish.description,
+        urlImage: foundWish.urlImage,
+        date: foundWish.date || "",
+      });
     }
     setLoading(false);
   }, [wishs, id]);
+  const handleUpdate = (e) => {
+    e.preventeDefalt();
+    console.log(form);
+  };
   if (loading) return <h1>Carregando...</h1>;
-
   return (
-    <>
+    <div>
       <h1>Detalhes do desejo</h1>
-      <p>{wishDetail.name}</p>
-      <p>{wishDetail.description}</p>
-      <p>
-        <img width={200} src={wishDetail.urlImage} alt={wishDetail.name} />
-      </p>
-    </>
+      <button onClick={() => navigate(-1)}>↩️ Voltar</button>
+      <button onClick={handleEditToggle}>✏️Editar</button>
+      {isEditing ? (
+        <>
+          <AddItemForm
+            handleSubmit={handleUpdate}
+            setform={setform}
+            form={form}
+          />
+        </>
+      ) : (
+        <>
+          <p>{wishDetail.name}</p>
+          <p>{wishDetail.description}</p>
+          <p>{formatDate(wishDetail.date)}</p>
+          <img width={200} src={wishDetail.urlImage} alt={wishDetail.name} />
+        </>
+      )}
+    </div>
   );
 };

@@ -14,7 +14,7 @@ const DEFAULT_FORM = {
 function App({ search }) {
   const { wishs, setWishs } = useWishs();
 
-  const [form, setForm] = useState(DEFAULT_FORM);
+  const [form, setform] = useState(DEFAULT_FORM);
 
   const filteredWishs = useMemo(() => {
     if (!search.trim()) {
@@ -36,7 +36,7 @@ function App({ search }) {
     const newWish = { ...form, id: newId };
     const updatedWishs = [...wishs, newWish];
     setWishs(updatedWishs);
-    setForm(DEFAULT_FORM);
+    orm(DEFAULT_FORM);
   };
 
   const handleDelete = useCallback(
@@ -53,7 +53,7 @@ function App({ search }) {
         <AddItemForm
           handleSubmit={handleSubmit}
           form={form}
-          setForm={setForm}
+          setform={setform}
         />
         <CardGrid
           wishs={filteredWishs}

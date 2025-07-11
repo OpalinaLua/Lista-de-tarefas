@@ -1,9 +1,9 @@
 import styles from "./AddItemForm.module.css";
 
-export const AddItemForm = ({ handleSubmit, form, setForm }) => {
+export const AddItemForm = ({ handleSubmit, form, setform }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
+    setform((prev) => ({
       ...prev,
       [name]: value,
     }));

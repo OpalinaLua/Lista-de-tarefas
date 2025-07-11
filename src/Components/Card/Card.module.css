@@ -64,3 +64,19 @@
 .card:hover .delete {
   opacity: 1;
 }
+
+.detalhe {
+  position: absolute;
+  background-color: rgb(28, 187, 36);
+  padding: 10px;
+  bottom: 1.7rem;
+  right: 2rem;
+  border: 2px solid rgb(17, 138, 23);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover .detalhe {
+  opacity: 1;
+}
