@@ -5,6 +5,7 @@
   border: 1px solid;
   position: relative;
   margin: auto;
+  min-width: 450px;
 }
 .voltar {
   position: absolute;
