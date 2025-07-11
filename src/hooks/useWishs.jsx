@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const DEFAULT_FORM = {
+export const DEFAULT_FORM = {
   name: "",
   description: "",
   urlImage: "",
@@ -10,7 +10,7 @@ const DEFAULT_FORM = {
 export const useWishs = () => {
   const [wishs, setWishs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [form, setform] = useState(DEFAULT_FORM);
+  const [form, setForm] = useState(DEFAULT_FORM);
 
   useEffect(() => {
     const savedWishs = localStorage.getItem("userWishs");
@@ -38,6 +38,6 @@ export const useWishs = () => {
     loading,
     setLoading,
     form,
-    setform,
+    setForm,
   };
 };

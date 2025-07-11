@@ -16,8 +16,6 @@
 .image {
   border-radius: 10%;
   object-fit: cover;
-  margin: 20px;
-  border: 2px solid #000;
   padding: 8px;
 }
 .content {
@@ -40,7 +38,7 @@
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  .content {
+  .card {
     padding: 1.25rem;
   }
   .name {

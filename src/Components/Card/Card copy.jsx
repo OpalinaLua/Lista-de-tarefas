@@ -53,4 +53,4 @@ import { useState } from "react";
 //      </div>
 //    </>
 // );
-//};
+//};npm run predeploy,npm run deploy
