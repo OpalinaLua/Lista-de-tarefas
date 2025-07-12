@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { formatDate } from "../../utils/formatDate";
 import { AddItemForm } from "../AddItemForm/AddItemForm";
 import style from "./WishDetail.module.css";
+import { FcEditImage } from "react-icons/fc";
+import { TiArrowBackOutline } from "react-icons/ti";
 
 export const WishDetail = () => {
   const { id } = useParams();
@@ -44,10 +46,10 @@ export const WishDetail = () => {
     <div className={style.card}>
       <h1>Detalhes do desejo</h1>
       <button className={style.voltar} onClick={() => navigate(-1)}>
-        ↩️ Voltar
+        <TiArrowBackOutline color="yellow" />
       </button>
       <button className={style.editar} onClick={handleEditToggle}>
-        ✏️Editar
+        <TiArrowBackOutline color="red" />
       </button>
       {isEditing ? (
         <>

@@ -53,4 +53,4 @@ import { useState } from "react";
 //      </div>
 //    </>
 // );
-//};npm run predeploy,npm run deploy
+//};npm run predeploy,npm run deploy,npm install react-icons,https://react-icons.github.io/react-icons/

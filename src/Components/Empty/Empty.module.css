@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap");
+
 .container {
   min-height: 42vh;
   display: flex;
@@ -17,21 +19,23 @@
   font-size: 7rem;
 }
 .tex {
-  font-size: 1.5rem;
+  font-size: 50px;
+  font-style: normal;
   color: aliceblue;
   text-align: center;
-  font-family: fantasy;
+  font-family: "Manufacturing Consent", system-ui;
   background: linear-gradient(0deg, #dd9ef7 0%, #dcdcdc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(10px 8px 5px rgb(83, 41, 11));
 }
 .tex1 {
-  font-size: 1.5rem;
+  font-size: 50px;
+  font-style: normal;
   color: aliceblue;
   text-align: center;
-  font-family: fantasy;
-  background: linear-gradient(0deg, #bbdefb 0%, #fff9c4 100%);
+  font-family: "Manufacturing Consent", system-ui;
+  background: linear-gradient(0deg, #add7fa 0%, #fdf5ad 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(10px 8px 5px rgb(83, 41, 11));

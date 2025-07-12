@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import styles from "./Card.module.css";
 import { formatDate } from "../../utils/formatDate";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { TbListDetails } from "react-icons/tb";
 
 export const Card = ({ name, description, image, date, onDelete, id }) => {
   const formatedDate = formatDate(date);
@@ -15,13 +17,13 @@ export const Card = ({ name, description, image, date, onDelete, id }) => {
         <p className={styles.description}>{description}</p>
         <p className={styles.description}>{formatedDate}</p>
         <button className={styles.delete} onClick={onDelete}>
-          🗑️
+          <RiDeleteBin6Line color="yellow" />
         </button>
         <button
           className={styles.detalhe}
           onClick={() => navigate(`wish/${id}`)}
         >
-          Detalhes
+          <TbListDetails color="red" />
         </button>
       </div>
     </div>
